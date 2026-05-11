@@ -1,0 +1,266 @@
+/* ========================================
+   Habamax Style CSS
+   ======================================== */
+
+:root {
+  /* --- Base Colors (Light Mode) --- */
+  --hbm-bg: #f5eed0;           /* 温かみのあるオフホワイト */
+  --hbm-bg-alt: #ece4c2;       /* コードブロックなどの背景 */
+  --hbm-fg: #2c2421;           /* 濃い茶色のテキスト */
+  --hbm-fg-light: #5a5045;     /* 薄めのテキスト */
+  --hbm-comment: #8a8068;      /* くすんだベージュ（コメント） */
+  --hbm-keyword: #b03020;      /* 赤茶色（キーワード） */
+  --hbm-string: #407030;       /* 深緑（文字列） */
+  --hbm-function: #3060a0;     /* 穏やかな青（関数） */
+  --hbm-constant: #a04070;     /* 落ち着いた紫（定数） */
+  --hbm-type: #2070a0;         /* シアン系（型・クラス） */
+  --hbm-accent: #c07830;       /* 黄土色・オレンジ（アクセント） */
+  --hbm-border: #d0c8a8;       /* 境界線 */
+  --hbm-link: #3050a0;         /* リンク */
+  --hbm-selection-bg: #d4c990; /* 選択時の背景 */
+}
+
+/* --- Dark Mode --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hbm-bg: #1e1c1a;
+    --hbm-bg-alt: #282420;
+    --hbm-fg: #c8c0b0;
+    --hbm-fg-light: #9a9080;
+    --hbm-comment: #706860;
+    --hbm-keyword: #e0605a;
+    --hbm-string: #80c070;
+    --hbm-function: #70a0e0;
+    --hbm-constant: #d080b0;
+    --hbm-type: #70b0d0;
+    --hbm-accent: #e09040;
+    --hbm-border: #4a4238;
+    --hbm-link: #80a0e0;
+    --hbm-selection-bg: #4a4238;
+  }
+}
+
+/* ========================================
+   1. Base Layout & Typography
+   ======================================== */
+body {
+  background-color: var(--hbm-bg);
+  color: var(--hbm-fg);
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--hbm-selection-bg);
+  color: var(--hbm-fg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--hbm-fg);
+  font-weight: bold;
+  line-height: 1.4;
+  border-bottom: 2px solid var(--hbm-border);
+  padding-bottom: 0.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2rem; border-bottom-width: 3px; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.3rem; border-bottom: none; }
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: var(--hbm-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--hbm-accent);
+  text-decoration: underline;
+}
+
+strong {
+  color: var(--hbm-keyword);
+  font-weight: bold;
+}
+
+/* ========================================
+   2. Markdown Elements (Lists, Blockquote, etc.)
+   ======================================== */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--hbm-accent);
+  background-color: var(--hbm-bg-alt);
+  padding: 0.8rem 1.2rem;
+  margin: 1.5rem 0;
+  color: var(--hbm-fg-light);
+  border-radius: 0 4px 4px 0;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--hbm-border);
+  margin: 2rem 0;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid var(--hbm-border);
+  padding: 0.6rem 1rem;
+}
+
+th {
+  background-color: var(--hbm-bg-alt);
+  font-weight: bold;
+  color: var(--hbm-fg);
+}
+
+tr:nth-child(even) {
+  background-color: var(--hbm-bg-alt);
+}
+
+/* ========================================
+   3. Code Blocks (Habamax Vibe)
+   ======================================== */
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', 'Consolas', monospace;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background-color: var(--hbm-bg-alt);
+  color: var(--hbm-accent);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Code block container */
+pre {
+  background-color: var(--hbm-bg-alt);
+  border: 1px solid var(--hbm-border);
+  padding: 1.2rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: var(--hbm-fg);
+  font-size: inherit;
+}
+
+/* ========================================
+   4. Syntax Highlighting (Prism.js / Highlight.js etc)
+   ======================================== */
+/* Keywords (if, for, return, const) */
+.token.keyword,
+.hljs-keyword {
+  color: var(--hbm-keyword);
+  font-weight: bold;
+}
+
+/* Strings */
+.token.string,
+.token.attr-value,
+.hljs-string {
+  color: var(--hbm-string);
+}
+
+/* Functions & Methods */
+.token.function,
+.token.method,
+.hljs-function .hljs-title,
+.hljs-title {
+  color: var(--hbm-function);
+}
+
+/* Constants & Numbers */
+.token.number,
+.token.boolean,
+.token.constant,
+.hljs-number,
+.hljs-literal {
+  color: var(--hbm-constant);
+}
+
+/* Types & Classes */
+.token.class-name,
+.token.builtin,
+.hljs-type,
+.hljs-built_in {
+  color: var(--hbm-type);
+}
+
+/* Comments */
+.token.comment,
+.hljs-comment {
+  color: var(--hbm-comment);
+  font-style: italic;
+}
+
+/* Variables & Operators */
+.token.operator,
+.token.punctuation {
+  color: var(--hbm-fg-light);
+}
+
+/* Tags (HTML/XML) */
+.token.tag {
+  color: var(--hbm-keyword);
+}
+
+/* Attributes */
+.token.attr-name {
+  color: var(--hbm-accent);
+}
+
+/* ========================================
+   5. Scrollbar (Webkit)
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--hbm-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hbm-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hbm-comment);
+}
+
