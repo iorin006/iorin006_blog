@@ -1,43 +1,23 @@
 /* ========================================
-   Habamax Style CSS
+   Habamax Style CSS (Dark Mode Only)
    ======================================== */
 
 :root {
-  /* --- Base Colors (Light Mode) --- */
-  --hbm-bg: #f5eed0;           /* 温かみのあるオフホワイト */
-  --hbm-bg-alt: #ece4c2;       /* コードブロックなどの背景 */
-  --hbm-fg: #2c2421;           /* 濃い茶色のテキスト */
-  --hbm-fg-light: #5a5045;     /* 薄めのテキスト */
-  --hbm-comment: #8a8068;      /* くすんだベージュ（コメント） */
-  --hbm-keyword: #b03020;      /* 赤茶色（キーワード） */
-  --hbm-string: #407030;       /* 深緑（文字列） */
-  --hbm-function: #3060a0;     /* 穏やかな青（関数） */
-  --hbm-constant: #a04070;     /* 落ち着いた紫（定数） */
-  --hbm-type: #2070a0;         /* シアン系（型・クラス） */
-  --hbm-accent: #c07830;       /* 黄土色・オレンジ（アクセント） */
-  --hbm-border: #d0c8a8;       /* 境界線 */
-  --hbm-link: #3050a0;         /* リンク */
-  --hbm-selection-bg: #d4c990; /* 選択時の背景 */
-}
-
-/* --- Dark Mode --- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --hbm-bg: #1e1c1a;
-    --hbm-bg-alt: #282420;
-    --hbm-fg: #c8c0b0;
-    --hbm-fg-light: #9a9080;
-    --hbm-comment: #706860;
-    --hbm-keyword: #e0605a;
-    --hbm-string: #80c070;
-    --hbm-function: #70a0e0;
-    --hbm-constant: #d080b0;
-    --hbm-type: #70b0d0;
-    --hbm-accent: #e09040;
-    --hbm-border: #4a4238;
-    --hbm-link: #80a0e0;
-    --hbm-selection-bg: #4a4238;
-  }
+  /* --- Colors (Dark Mode) --- */
+  --hbm-bg: #1e1c1a;           /* 濃いグレー（背景） */
+  --hbm-bg-alt: #282420;       /* コードブロックなどの背景 */
+  --hbm-fg: #c8c0b0;           /* ベージュ系のテキスト */
+  --hbm-fg-light: #9a9080;     /* 薄めのテキスト */
+  --hbm-comment: #706860;      /* 落ち着いたグレー（コメント） */
+  --hbm-keyword: #e0605a;      /* 柔らかい赤（キーワード） */
+  --hbm-string: #80c070;       /* 柔らかい緑（文字列） */
+  --hbm-function: #70a0e0;     /* 穏やかな青（関数） */
+  --hbm-constant: #d080b0;     /* 柔らかい紫（定数） */
+  --hbm-type: #70b0d0;         /* シアン系（型・クラス） */
+  --hbm-accent: #e09040;       /* オレンジ（アクセント） */
+  --hbm-border: #4a4238;       /* 境界線 */
+  --hbm-link: #80a0e0;         /* リンク */
+  --hbm-selection-bg: #4a4238; /* 選択時の背景 */
 }
 
 /* ========================================
@@ -263,4 +243,3 @@ pre code {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--hbm-comment);
 }
-
